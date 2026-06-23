@@ -45,6 +45,7 @@
 	#pragma once // Some compilers (e.g. VC++) benefit significantly from using this. We've measured 3-4% build speed improvements in apps as a result.
 #endif
 
+#include <limits>
 
 // Disable Warnings:
 //   cast truncates constant value / expression is always false
@@ -1435,16 +1436,16 @@ namespace eastl
 				{ return 0.5f; }
 
 			static value_type infinity() 
-				{ return _CSTD _FInf._Float; }
+				{ return std::numeric_limits<float>::infinity(); }
 
 			static value_type quiet_NaN() 
-				{ return _CSTD _FNan._Float; }
+				{ return std::numeric_limits<float>::quiet_NaN(); }
 
 			static value_type signaling_NaN()
-				{ return _CSTD _FSnan._Float; } 
+				{ return std::numeric_limits<float>::signaling_NaN(); } 
 
 			static value_type denorm_min() 
-				{ return _CSTD _FDenorm._Float; }
+				{ return std::numeric_limits<float>::denorm_min(); }
 
 		#endif
 	};
@@ -1553,16 +1554,16 @@ namespace eastl
 				{ return 0.5f; }
 
 			static value_type infinity() 
-				{ return _CSTD _Inf._Double; }
+				{ return std::numeric_limits<double>::infinity(); }
 
 			static value_type quiet_NaN() 
-				{ return _CSTD _Nan._Double; }
+				{ return std::numeric_limits<double>::quiet_NaN(); }
 
 			static value_type signaling_NaN()
-				{ return _CSTD _Snan._Double; } 
+				{ return std::numeric_limits<double>::signaling_NaN(); } 
 
 			static value_type denorm_min() 
-				{ return _CSTD _Denorm._Double; }
+				{ return std::numeric_limits<double>::denorm_min(); }
 
 		#endif
 	};
@@ -1671,16 +1672,16 @@ namespace eastl
 				{ return 0.5f; }
 
 			static value_type infinity() 
-				{ return _CSTD _LInf._Long_double; }
+				{ return std::numeric_limits<long double>::infinity(); }
 
 			static value_type quiet_NaN() 
-				{ return _CSTD _LNan._Long_double; }
+				{ return std::numeric_limits<long double>::quiet_NaN(); }
 
 			static value_type signaling_NaN()
-				{ return _CSTD _LSnan._Long_double; } 
+				{ return std::numeric_limits<long double>::signaling_NaN(); } 
 
 			static value_type denorm_min() 
-				{ return _CSTD _LDenorm._Long_double; }
+				{ return std::numeric_limits<long double>::denorm_min(); }
 
 		#endif
 	};
